@@ -9,7 +9,7 @@ body {
     justify-content: center;
 }
 
-h2 {
+h2, p {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
 }
@@ -115,7 +115,7 @@ h2 {
 }
 
 .fonctionnement {
-    padding-top: 48px;
+    padding: 48px 20px 68px 20px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -127,9 +127,59 @@ h2 {
     line-height: 28px;
 }
 
+/* https://css-tricks.com/css-counters-custom-list-number-styling/ */
+
+.etapes {
+    --width: 24px;
+    margin-top: 1px;
+    counter-reset: etape-counter;
+    list-style: none;
+    padding-left: calc(0.5 * var(--width));
+}
+
 .etape {
+    counter-increment: etape-counter;
+    position:relative;
+    margin-top: 25px;
     height: 72.38px;
+    padding-left: 33px;
+    padding-right: 33px;
+    display: flex;
+    align-items: center;
     background: #F7F7F7;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
+}
+
+.etape::before {
+    box-sizing: border-box;
+    position: absolute;
+    left: calc(-0.5 * var(--width));
+    width: var(--width);
+    height:var(--width);
+    content: counter(etape-counter);
+    font-weight: 500;
+    font-size: 14.1818px;
+    padding-top: 2px;
+    line-height: calc(var(--width) - 2px);
+    text-align: center;
+    color: white;
+    background: #9356DC;
+    border-radius: 50%;
+}
+
+.etape-icon {
+    width: 40px;
+    font-size: 19px;
+    color: #7E7E7E;
+}
+
+.etape-icon-colored {
+    color: #9356DC;
+}
+
+.etape-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
 }
