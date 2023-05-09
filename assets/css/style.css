@@ -201,28 +201,46 @@ a {
 }
 
 .button {
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: white;
+}
+
+.button-off {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
     background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     transform: matrix(1, 0, 0, -1, 0, 0);
-    transition-property: box-shadow, background-color;
+    transition-property: opacity;
     transition-duration: 0.3s;
 }
 
-.button:hover {
+.button-on {
+    position: absolute;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
     box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.35);
     border-radius: 25px;
     transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.button-off:hover {
+    /*background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 25px;
+    transform: matrix(1, 0, 0, -1, 0, 0);*/
+    opacity: 0;
 }
 
 .button-text {
@@ -373,6 +391,16 @@ a {
     -webkit-text-stroke: 1px rgb(0,0,0);
 }
 
+.like-icon-on {
+    position: absolute;
+    top: 1.5px;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0px rgb(255,255,255);
+    transform: scale(1, 1.16);
+}
+
 .like-icon-off {
     /*color: white;*/
     background: linear-gradient(193.33deg, #FFFFFF -11.44%, #FFFFFF 123.93%);
@@ -386,16 +414,6 @@ a {
 
 .like-icon-off:hover {
     opacity: 0;
-}
-
-.like-icon-on {
-    position: absolute;
-    top: 1.5px;
-    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0px rgb(255,255,255);
-    transform: scale(1, 1.16);
 }
 
 .footer {
