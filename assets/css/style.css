@@ -86,7 +86,6 @@ a {
     font-size: 18px;
     line-height: 21px;
     text-align: center;
-    color: #676767;
 }
 
 .button {
@@ -254,7 +253,6 @@ a {
     font-weight: 300;
     font-size: 17px;
     line-height: 20px;
-    color: #555555;
 }
 
 .restaurant-item .description .like {
@@ -263,22 +261,10 @@ a {
     position: relative;
 }
 
-/*
 .restaurant-item .description .like-icon {
     color: white;
-    background: linear-gradient(193.33deg, #FFFFFF -11.44%, #FFFFFF 123.93%);
     -webkit-text-stroke: 1px rgb(0,0,0);
-    transition: 1s;
 }
-
-.restaurant-item .description .like-icon:hover {
-    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0px transparent;
-}
-*/
-/*transform: scale(1, 1.16);*/
 
 .restaurant-item .description .like-icon-off {
     /*color: white;*/
@@ -303,4 +289,52 @@ a {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0px rgb(255,255,255);
     transform: scale(1, 1.16);
+}
+
+.footer {
+    padding: 22px 25px 24px 25px;
+    display: flex;
+    flex-direction: column;
+    background: #353535;
+}
+
+.footer-company {
+    font-family: 'Shrikhand';
+    /*font-style: italic;*/
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+}
+
+.footer-links-list {
+    margin: 16px 0 0 0;
+    padding: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-links-list-item {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.footer-links-list-item i {
+    width: 22px;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.footer-links-list-item a {
+    color: #FFFFFF;
+}
+
+.footer-links-list-item .text {
+    font-weight: 400;
+}
+
+.footer-links-list-item .text-light {
+    font-weight: 300;
 }
