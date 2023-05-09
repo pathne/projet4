@@ -48,6 +48,7 @@ a {
 }
 
 .loader {
+    z-index: 10;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -68,7 +69,7 @@ a {
 }
 
 /* https://loading.io/css/ */
-@keyframes lds-facebook {
+@keyframes lds {
     0% {
         top: 8px;
         height: 64px;
@@ -79,35 +80,35 @@ a {
     }
 }
 
-.lds-facebook {
+.lds {
     display: inline-block;
     position: relative;
     width: 80px;
     height: 80px;
 }
 
-.lds-facebook div {
+.lds div {
     display: inline-block;
     position: absolute;
     left: 8px;
     width: 16px;
     background: black;
-    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation: lds 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
-.lds-facebook div:nth-child(1) {
+.lds div:nth-child(1) {
     left: 8px;
     animation-delay: -0.24s;
 }
 
-.lds-facebook div:nth-child(2) {
+.lds div:nth-child(2) {
     left: 32px;
     animation-delay: -0.12s;
 }
 
-.lds-facebook div:nth-child(3) {
+.lds div:nth-child(3) {
     left: 56px;
-    animation-delay: 0;
+    animation-delay: 0s;
 }
 
 /* loader end */
@@ -124,6 +125,7 @@ a {
     display: flex;
     justify-content: center;
     background-color: rgb(255,255,255);
+    z-index: 1;
 }
 
 .header-shadow {
@@ -158,6 +160,7 @@ a {
     align-items: center;
     gap: 17px;
     background: #EAEAEA;
+    z-index: 2;
 }
 
 .location-icon {
@@ -247,9 +250,12 @@ a {
     transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
+.fonctionnement-container {
+    background-color: white;
+}
+
 .fonctionnement {
     padding: 48px 20px 68px 20px;
-    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -309,6 +315,9 @@ a {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
+}
+
+.restaurants-container {
 }
 
 .restaurants {
@@ -402,7 +411,6 @@ a {
 }
 
 .like-icon-off {
-    /*color: white;*/
     background: linear-gradient(193.33deg, #FFFFFF -11.44%, #FFFFFF 123.93%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -466,7 +474,11 @@ a {
 
 
 
-/* restaurant page */
+/************************
+
+restaurant page
+
+*************************/
 
 .restaurant-presentation {
     display: flex;
@@ -484,15 +496,27 @@ a {
     object-fit: cover;
 }
 
-.restaurant-image-cover {
+.restaurant-image-cover-container{
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: 0px;
+}
+
+.restaurant-image-cover {
     height: 39px;
     background-color: #F7F7F7;
     border-top-left-radius: 39px;
     border-top-right-radius: 39px;
+}
+
+.menu-background {
+}
+
+.menu-container {
+}
+
+.menu-container-limit {
 }
 
 .restaurant-name-and-like {
@@ -663,4 +687,196 @@ a {
 .order-button {
     padding-left: 49px;
     padding-right: 49px;
+}
+
+@media (min-width: 768.02px) {
+
+    .header {
+        height: 96px;
+    }
+
+    .header-shadow {
+        box-shadow: none;
+    }
+
+    .header-logo {
+        margin-top: 30px;
+        width: 200px;
+        height: 34px;
+    }
+
+    .explore {
+        padding-top: 30px;
+    }
+
+    .explore-title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    .explore-text {
+        margin: 31px 0 3px 0;
+    }
+
+    .button-explore {
+        margin-bottom: 30px;
+    }
+
+    .fonctionnement-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .fonctionnement {
+        max-width: 1080px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 35px;
+        padding-left: 0px;
+        padding-right: 26px;
+        flex-grow: 1;
+    }
+
+    .etapes {
+        margin-top: 2px;
+        display: flex;
+        gap: 36px;
+    }
+
+    .etape {
+        width: 230px;
+        flex-grow: 1;
+    }
+
+    .restaurants-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .restaurants {
+        max-width: 1080px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex-grow: 1;
+    }
+
+    .restaurants-items {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .restaurant-item {
+        min-width: 45.3%;
+        box-shadow: none;
+    }
+
+    /***********
+
+    retaurant page
+
+    ***********/
+
+    .restaurant-presentation {
+
+    }
+
+    .restaurant-image {
+        height: 383px;
+    }
+
+    .restaurant-image-cover-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .restaurant-image-cover {
+        /*flex-grow: 1;*/
+        width: 80%;
+        max-width: 1055px;
+        height: 45px;
+        border-top-left-radius: 45px;
+        border-top-right-radius: 45px;
+    }
+
+    .menu-background {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-container {
+        /*flex-grow: 1;*/
+        width: 80%;
+        max-width: 1055px;
+        background-color: #F7F7F7;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-container-limit {
+        max-width: 634px;
+        flex-grow: 1;
+        /*max-width: */
+    }
+
+    .restaurant-name-and-like {
+        margin: 0 0 0 0;
+        padding-top: 11px;
+        display: flex;
+        justify-content: center;
+        background-color: #F7F7F7;
+    }
+
+    .restaurant-like {
+        margin-right: 0px;
+        margin-left: 25px;
+    }
+}
+
+
+@media (min-width: 768.02px) and (max-width: 1054px) {
+
+    .fonctionnement {
+        flex-grow: 0;
+    }
+
+    .etapes {
+        display: block;
+    }
+
+    .etape {
+        width: 350px;
+    }
+}
+
+
+@media (min-width: 885px) {
+    .footer {
+        padding-bottom: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .footer-company {
+        margin: 35px 40px 0 90px;
+        order: 2;
+    }
+
+    .footer-links-list {
+        margin-top: 42px;
+        order: 1;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .footer-links-list li:nth-child(2) {
+        margin-right: 30px;
+    }
 }
