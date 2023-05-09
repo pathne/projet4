@@ -9,6 +9,11 @@ body {
     justify-content: center;
 }
 
+main {
+    position: relative;
+    overflow: hidden;
+}
+
 h2, h3, p {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
@@ -119,7 +124,25 @@ a {
     display: flex;
     justify-content: center;
     background-color: rgb(255,255,255);
+}
+
+.header-shadow {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav-back {
+    position: absolute;
+    left: 17px;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-back-arrow {
+    display: block;
+    padding: 5px;
+    font-size: 20px;
 }
 
 .header-logo {
@@ -170,18 +193,20 @@ a {
     text-align: center;
 }
 
-.button {
+.button-explore {
     margin-top: 27px;
     margin-bottom: 57px;
-    width: 186px;
-    height: 50px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.button {
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: white;
@@ -343,12 +368,12 @@ a {
     position: relative;
 }
 
-.restaurant-item .description .like-icon {
+.like-icon {
     color: white;
     -webkit-text-stroke: 1px rgb(0,0,0);
 }
 
-.restaurant-item .description .like-icon-off {
+.like-icon-off {
     /*color: white;*/
     background: linear-gradient(193.33deg, #FFFFFF -11.44%, #FFFFFF 123.93%);
     -webkit-background-clip: text;
@@ -359,11 +384,11 @@ a {
     transition: opacity 0.3s;
 }
 
-.restaurant-item .description .like-icon-off:hover {
+.like-icon-off:hover {
     opacity: 0;
 }
 
-.restaurant-item .description .like-icon-on {
+.like-icon-on {
     position: absolute;
     top: 1.5px;
     background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -419,4 +444,205 @@ a {
 
 .footer-links-list-item .text-light {
     font-weight: 300;
+}
+
+
+
+/* restaurant page */
+
+.restaurant-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.restaurant-image-container {
+    position: relative;
+}
+
+.restaurant-image {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+}
+
+.restaurant-image-cover {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 39px;
+    background-color: #F7F7F7;
+    border-top-left-radius: 39px;
+    border-top-right-radius: 39px;
+}
+
+.restaurant-name-and-like {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 17px;
+}
+
+.restaurant-name {
+    font-family: 'Shrikhand';
+    /*font-style: italic;*/
+    font-weight: 400;
+    font-size: 28px;
+    /*line-height: 41px;*/
+}
+
+.restaurant-like {
+    font-size: 22px;
+    position: relative;
+    margin-right: 41px;
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        left: 34px;
+    }
+    75% {
+        opacity: 0;
+        left: 34px;
+    }
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+.meal-section {
+    position: relative;
+    padding-top: 34px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-name: appear;
+
+    left: 0px;
+    opacity: 1;
+}
+
+.delay0 {
+    animation-delay: -1.2s;
+}
+
+.delay1 {
+    animation-delay: -1s;
+}
+
+.delay2 {
+    animation-delay: -.8s;
+}
+
+.meal-type {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+
+.meal-type-border {
+    margin-top: 5px;
+    width: 40px;
+    border-top: 3px solid #99E2D0;
+}
+
+.meal-item {
+    position: relative;
+    height: 69px;
+    margin-top: 12px;
+    background: white;
+    box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+    border-radius: 15.0431px;
+    overflow: hidden;
+}
+
+.meal-item:hover .meal-item-animate {
+    right: 0px;
+}
+
+.meal-item-animate {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: -59px;
+    bottom: 0px;
+    display: flex;
+    transition: right 0.3s;
+}
+
+.meal-content {
+    min-width: 0px;
+    flex-grow: 1;
+    padding: 13px 15px 13px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meal-content .title {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.meal-content .addendum-and-price {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15.0431px;
+    line-height: 18px;
+}
+
+.meal-item .addendum {
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 5px;
+}
+
+.meal-item .price {
+    font-weight: 700;
+}
+
+.select-button {
+    width: 59px;
+    background-color: #99E2D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-button .icon {
+    padding: 3px 3px 3px 3px;
+    font-size: 14px;
+    color: #99E2D0;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.order-section {
+    padding-top: 34px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.order-button {
+    padding-left: 49px;
+    padding-right: 49px;
 }
